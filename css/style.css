@@ -153,6 +153,81 @@ footer a:hover {
   font-size: 300%;
 }
 
+/* inicio hero */
+
+.hero {
+  background-image: url(../images/fondo.jpg);
+  height: 60vh;
+  /* hay que darle altura si no no se ve la imagen al estar en fondo */
+  background-size: cover;
+  background-position: center center;
+  /* centrar la imagen de fondo para que se vean los elementos
+  center horizontal center vertical */
+  background-color: #777;
+  background-blend-mode: multiply;
+  /* fusion de capa color con imagen de fondo */
+  color: white;
+  display: flex;
+  /* Para centar el contenido del container */
+}
+
+.hero .container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  /* Al ponerle width se centra en un ancho concreto. */
+}
+
+.hero h1 {
+  font-family: var(--fuentetitulo);
+  font-size: 2em; /*200%*/
+}
+
+.hero h2 {
+  color: var(--colorprincipal);
+  font-size: 1.25em;
+  margin: var(--margingrid) 0;
+}
+
+.hero p {
+  font-size: 1.15em;
+}
+
+.boton {
+  display: inline-block;
+  /* Elemento en linea como bloque */
+  background-color: var(--colorprincipal);
+  color: white;
+  text-decoration: none;
+  padding: 1.15em;
+  margin: var(--margingrid) 0;
+  border: 1px solid var(--colorprincipal);
+}
+
+.boton:hover {
+  background-color: transparent;
+  color: var(--colorprincipal);
+}
+
+.boton:hover i {
+  transition: 0.5s;
+  transform: translateX(5px) scale(1.1);
+  /*movimientolaflecha.*/
+}
+
+.hero ul {
+  display: flex;
+  width: 9em;
+  justify-content: space-between;
+}
+
+.hero ul a {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+}
+
 /* mediasqueries */
 @media (min-width: 37.5em) {
   /*600px tablet*/
