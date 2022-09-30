@@ -261,13 +261,73 @@ main section .underline span {
   top: -0.4em;
 }
 
-main section hr {
+main section .underline hr {
   border-color: var(--colorprincipal);
+}
+
+main section .grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Para poner los articulos en vertical de our services */
+
+main section .grid article {
+  width: 100%;
+  /* para centrarlos al maximo de su tamano en moviles */
+  border-bottom: 1px solid #aaa;
+  padding: 1.5em 0;
+}
+
+main section article > div .fa-solid {
+  /* article>div .fa-solid ataca solo a los hijos directos de article .fa-solid que es la propiedad de los iconos */
+  border: 1px solid var(--colorprincipal);
+  padding: 0.75em;
+  color: var(--colorprincipal);
+  font-size: 120%;
+}
+
+main section article h3 {
+  font-weight: 700;
+  font-size: 110%;
+  margin: 0.625em 0em;
+}
+
+main p {
+  color: #666;
+  line-height: 1.25em;
+  font-size: 95%;
+}
+
+main section article p {
+  margin-bottom: 0.5em;
+}
+
+.enlace {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--colorprincipal);
+}
+
+.fa-truck {
+  transform: rotateY(180deg);
 }
 
 /* MEDIAQUERIES */
 @media (min-width: 37.5em) {
   /*600px tablet*/
+  main section .grid article {
+    width: 50%;
+    border-bottom: none;
+    border-left: 1px solid #aaa;
+    padding: 1.5em;
+    /* Afecta a todos los lados de la linea */
+    margin-top: 1em;
+  }
+
+  main section .grid article:last-child {
+    /* Last child ataca al ultimo elemento */
+    width: 100%;
+  }
 }
 
 @media (min-width: 48em) {
@@ -301,5 +361,9 @@ main section hr {
   }
   header nav .container .menu li {
     display: inline-block; /*Elemento en linea (li menu) pero se comporta como bloque)*/
+  }
+
+  main section .grid :is(article, article:last-child) {
+    width: 33.333%;
   }
 }
