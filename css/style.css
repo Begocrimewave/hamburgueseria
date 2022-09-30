@@ -265,13 +265,13 @@ main section .underline hr {
   border-color: var(--colorprincipal);
 }
 
-main section .grid {
+main section .grid-services {
   display: flex;
   flex-wrap: wrap;
 }
 /* Para poner los articulos en vertical de our services */
 
-main section .grid article {
+main section .grid-services article {
   width: 100%;
   /* para centrarlos al maximo de su tamano en moviles */
   border-bottom: 1px solid #aaa;
@@ -312,10 +312,53 @@ main section article p {
   transform: rotateY(180deg);
 }
 
+/* FINAL OUR SERVICES */
+
+/* INICIO ABOUTUS */
+main #aboutus {
+  margin-bottom: 3.75em; /* 70px misma medida en header y boton*/
+}
+
+main section .grid-aboutus {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5em;
+}
+
+main section .grid-aboutus h3 {
+  font-weight: 700;
+  font-size: 110%;
+}
+
+main section .grid-aboutus h4 {
+  color: var(--colorprincipal);
+  margin: var(--margingrid) 0;
+}
+
+main section .grid-aboutus .imagen {
+  width: 95%;
+  margin: 2.5em auto;
+}
+
+main section .grid-aboutus .imagen .marco {
+  border: 3px solid var(--colorprincipal);
+  transform: rotateZ(10deg);
+  transition: 1s;
+}
+
+main section .grid-aboutus .imagen .marco {
+  transform: rotateZ(-10deg);
+  transition: 1s;
+}
+
+main section .grid-aboutus .imagen:hover :is(.marco, .marco img) {
+  transform: rotateZ(10deg);
+}
+
 /* MEDIAQUERIES */
 @media (min-width: 37.5em) {
   /*600px tablet*/
-  main section .grid article {
+  main section .grid-services article {
     width: 50%;
     border-bottom: none;
     border-left: 1px solid #aaa;
@@ -324,9 +367,17 @@ main section article p {
     margin-top: 1em;
   }
 
-  main section .grid article:last-child {
+  main section .grid-services article:last-child {
     /* Last child ataca al ultimo elemento */
     width: 100%;
+  }
+
+  main section .grid-aboutus {
+    flex-direction: row;
+  }
+
+  main section .grid-aboutus .imagen {
+    margin: 0 2.5em;
   }
 }
 
@@ -363,7 +414,7 @@ main section article p {
     display: inline-block; /*Elemento en linea (li menu) pero se comporta como bloque)*/
   }
 
-  main section .grid :is(article, article:last-child) {
+  main section .grid-services :is(article, article:last-child) {
     width: 33.333%;
   }
 }
