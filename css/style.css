@@ -211,12 +211,6 @@ footer a:hover {
   color: var(--colorprincipal);
 }
 
-.boton:hover i {
-  transition: 0.5s;
-  transform: translateX(5px) scale(1.1);
-  /*movimientolaflecha.*/
-}
-
 .hero ul {
   display: flex;
   width: 9em;
@@ -355,7 +349,37 @@ main section .grid-aboutus .imagen:hover :is(.marco, .marco img) {
   transform: rotateZ(0deg);
 }
 
+/* BLOOOOOOG */
+
+section #ourblog {
+  padding: 2.125em 1.5em;
+}
+
+main section .grid-blog {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main section .grid-blog article {
+  width: 50%;
+  border-bottom: none;
+  padding: 1.5em;
+  /* Afecta a todos los lados de la linea */
+  margin-top: 1em;
+}
+
+/* Para poner los articulos en vertical de our services */
+
+.date-blog {
+  background-color: var(--colorprincipal);
+  width: 100px;
+  height: 30px;
+  text-align: left;
+  color: white;
+}
+
 /* MEDIAQUERIES */
+
 @media (min-width: 37.5em) {
   /*600px tablet*/
   main section .grid-services article {
@@ -415,6 +439,10 @@ main section .grid-aboutus .imagen:hover :is(.marco, .marco img) {
   }
 
   main section .grid-services :is(article, article:last-child) {
+    width: 33.333%;
+  }
+
+  main section .grid-blog article {
     width: 33.333%;
   }
 }
