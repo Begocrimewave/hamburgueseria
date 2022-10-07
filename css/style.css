@@ -2,11 +2,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:wght@400;700&display=swap);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
 
-/* font-family:'Handlee',cursive;
-font-family:'Montserrat',sans-serif;
-color_principal; #fa573a;
-color_azul:#21242e; */
-
 html {
   /* Para generar animaciones por css en los enlaces de ancla */
   scroll-behavior: smooth;
@@ -17,6 +12,8 @@ html {
   --fuentetitulo: "Handlee", cursive;
   --colorprincipal: #fa573a;
   --colorsecundario: #21242e;
+  --colordarkmode: white;
+  --colorgrey: #aaa;
   --margingrid: 1em;
   --fontsize: 1em;
   --anchomaximo: 68.75em; /* Mejor en em para todos los navegadores
@@ -33,7 +30,6 @@ img {
 .container {
   max-width: var(--anchomaximo);
   margin: 0 auto;
-  /* Para centrar todo encorsetado */
 }
 
 body {
@@ -62,12 +58,12 @@ header .nav-top a i {
 }
 
 header .nav-top a span {
-  color: white;
+  color: var(--colordarkmode);
   display: none; /* (oculta los textos menu sup para moviles) */
 }
 
 header nav {
-  background-color: white;
+  color: var(--colordarkmode);
   padding: 1.25em; /*por todos lados*/
 }
 
@@ -81,14 +77,14 @@ header nav .container .logo {
   max-width: 100px;
 }
 
-/* hamburguesa */
+/* HAMBURGUEEEESA */
 header nav .container .hamburguesa {
   width: 1.875em;
   cursor: pointer; /*toda la superficie de la hamburguesa es clicable */
 }
 
 header nav .container .hamburguesa > div {
-  border-top: 2px solid #aaa;
+  border-top: 2px solid var(--colorgrey);
   margin-bottom: 0.625em;
 }
 
@@ -100,12 +96,12 @@ header nav .container .menu {
 
 header nav .container .menu li a {
   display: block;
-  /*(hacercliclabletodoelbloquenosoloeltextodelmenu)*/
+  /*(hacer cliclable todo el bloque no solo el texto del menu)*/
   padding: 1.25em;
   text-decoration: none;
-  color: #aaa;
-  border-bottom: 1px solid #aaa;
-  /*lineasgrisenelmenu*/
+  color: var(--colorgrey);
+  border-bottom: 1px solid var(--colorgrey);
+  /* linea sgris en el menu */
   transition: 1s;
 }
 
@@ -116,16 +112,17 @@ header nav .container .menu li:last-child a {
 header nav .container .menu li :is(a:hover, .activo) {
   color: var(--colorprincipal);
 }
+/* link activo del nav */
 
-/* FIN HEADER */
+/* FIN HEAAAAADER */
 
-/* INICIO FOOTER */
+/* INICIO FOOOOOOTER */
 footer {
   background-color: var(--colorsecundario);
   padding: 1.25em 0em;
   /* padding solo por arriba y por abajo */
   text-align: center;
-  color: white;
+  color: var(--colordarkmode);
   position: fixed;
   /* Position fixed: Cambia de capa y pierde la medida del contenedor por eso hay que agregarle width*/
   width: 100%;
@@ -136,7 +133,7 @@ footer {
 footer a {
   text-decoration: none;
   /* Hay que quitar text decoration porque la regla esta incluida en reset css  */
-  color: white;
+  color: var(--colordarkmode);
 }
 
 footer a:hover {
@@ -144,7 +141,8 @@ footer a:hover {
   /* color de links on hover */
 }
 
-/* FIN FOOTER */
+/* FIN FOOOOOOOTER */
+
 .flecha a {
   display: block;
   color: var(--colorprincipal);
@@ -154,7 +152,7 @@ footer a:hover {
   font-size: 300%;
 }
 
-/* INICIO HERO*/
+/* INICIO HEEEEEROOOOOO*/
 
 .hero {
   background-image: url(../images/fondo.jpg);
@@ -167,7 +165,7 @@ footer a:hover {
   background-color: #777;
   background-blend-mode: multiply;
   /* fusion de capa color con imagen de fondo */
-  color: white;
+  color: var(--colordarkmode);
   display: flex;
   /* Para centar el contenido del container */
 }
@@ -197,9 +195,9 @@ footer a:hover {
 
 .boton {
   display: inline-block;
-  /* Elemento en linea como bloque */
+  /* Convierte elemento en linea a elemento en bloque */
   background-color: var(--colorprincipal);
-  color: white;
+  color: var(--colordarkmode);
   text-decoration: none;
   padding: 1.15em;
   margin: var(--margingrid) 0;
@@ -211,6 +209,17 @@ footer a:hover {
   color: var(--colorprincipal);
 }
 
+.boton:hover i {
+  transition: 0.5s;
+  transform: translateX(5px) scale(1.1);
+  /*movimientolaflecha.*/
+}
+
+.hero ul :hover i {
+  color: var(--colorprincipal);
+  transition: 0.5s;
+}
+
 .hero ul {
   display: flex;
   width: 9em;
@@ -218,13 +227,13 @@ footer a:hover {
 }
 
 .hero ul a {
-  color: white;
+  color: var(--colordarkmode);
   text-decoration: none;
   font-size: 2em;
 }
-/* FINAL HERO */
+/* FINAL HEEEEEROOOOOOO */
 
-/* INICIO OURSERVICES */
+/* INICIO OUUURSEEEEEEERVICEEEES */
 main section {
   padding: 2.125em 1.5em;
 }
@@ -268,13 +277,12 @@ main section .grid-services {
 main section .grid-services article {
   width: 100%;
   /* para centrarlos al maximo de su tamano en moviles */
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid var(--colorgrey);
   padding: 1.5em 0;
 }
 
 main section article > div .fa-solid {
   /* article>div .fa-solid ataca solo a los hijos directos de article .fa-solid que es la propiedad de los iconos */
-  border: 1px solid var(--colorprincipal);
   padding: 0.75em;
   color: var(--colorprincipal);
   font-size: 120%;
@@ -308,7 +316,7 @@ main section article p {
 
 /* FINAL OUR SERVICES */
 
-/* INICIO ABOUTUS */
+/* INICIO ABOUUUTUUUUUUUS */
 main #aboutus {
   margin-bottom: 3.75em; /* 70px misma medida en header y boton*/
 }
@@ -378,14 +386,117 @@ main section .grid-blog article {
   color: white;
 }
 
-/* MEDIAQUERIES */
+/* OUR  MENUUUUUUUU */
+main section .grid-todaysmenu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5em;
+  margin-left: 3em;
+}
 
+main .todays-grid-container {
+  background-color: var(--colorsecundario);
+}
+
+.grid-menu-today {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+main section .menu-list h2 {
+  font-family: var(--fuenteprincipal);
+  font-weight: 600;
+  font-size: 110%;
+  color: var(--colordarkmode);
+  margin: var(--margingrid) 0;
+  text-align: left;
+  margin-top: 3em;
+}
+
+main section .line {
+  width: 3em;
+  text-align: left;
+}
+
+main section .line hr {
+  border-color: var(--colorprincipal);
+}
+
+.aside-menu li a {
+  display: flex;
+  color: var(--colordarkmode);
+  font-weight: 500;
+  margin-bottom: 5px;
+  padding: 5px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.menu-list .title {
+  margin-bottom: 2em;
+}
+
+.title-menu h2 {
+  color: var(--colordarkmode);
+}
+
+main section aside h2 {
+  color: var(--colordarkmode);
+  text-align: left;
+  margin-top: 2em;
+}
+
+.blog p {
+  color: var(--colordarkmode);
+}
+
+.menu-list p {
+  color: var(--colordarkmode);
+}
+
+.grid-menu-today h3 {
+  color: var(--colordarkmode);
+  font-size: 15px;
+}
+
+.grid-menu-today article {
+  margin-bottom: 2em;
+}
+.link-article a {
+  text-decoration: none;
+  color: var(--colorprincipal);
+  font-weight: 600;
+}
+
+.aside-menu {
+  margin-top: 3em;
+}
+
+.aside-menu li :is(a:hover, .activo) {
+  color: var(--colordarkmode);
+  background-color: #fa573a;
+}
+
+.grid-menu-today h3 span {
+  display: flex;
+  color: var(--colorprincipal);
+  justify-content: flex-end;
+}
+
+aside p {
+  color: var(--colordarkmode);
+  margin-bottom: 2em;
+}
+
+/* MEDIAQUERIEEEEEEEEEEEEEEES */
 @media (min-width: 37.5em) {
-  /*600px tablet*/
+  /*600px TABLEEEEEET MOVL*/
   main section .grid-services article {
     width: 50%;
     border-bottom: none;
-    border-left: 1px solid #aaa;
+    border-left: 1px solid var(--colorgrey);
     padding: 1.5em;
     /* Afecta a todos los lados de la linea */
     margin-top: 1em;
@@ -401,12 +512,17 @@ main section .grid-blog article {
   }
 
   main section .grid-aboutus .imagen {
-    margin: 0 2.5em;
+    margin: 5em;
+  }
+
+  .grid-menu-today p {
+    color: var(--colordarkmode);
+    margin: 0 auto;
   }
 }
 
 @media (min-width: 48em) {
-  /*768px tablet grande o pantalla peq*/
+  /*768px TABLEEEETTTS grande o pantalla peq*/
 
   header .nav-top a span {
     display: inline;
@@ -419,7 +535,7 @@ main section .grid-blog article {
 }
 
 @media (min-width: 62.75em) {
-  /*1004px pantallas*/
+  /*1004px DESKTOOOOP*/
   header nav .container .hamburguesa {
     display: none;
   }
@@ -444,5 +560,51 @@ main section .grid-blog article {
 
   main section .grid-blog article {
     width: 33.333%;
+  }
+
+  aside .container {
+    display: inline-block;
+  }
+
+  main section .line {
+    width: 4em;
+  }
+
+  .menu-list .title {
+    display: inline-block;
+  }
+
+  main section .grid-menu-today {
+    display: inline-block;
+    flex-direction: row;
+    margin-left: 10em;
+  }
+  .flex-menu {
+    margin-top: 5em;
+    display: flex;
+  }
+
+  .container-aside {
+    width: 10vw;
+  }
+
+  .grid-menu-today img {
+    width: 15em;
+  }
+
+  .grid-menu-today article {
+    display: flex;
+  }
+  .grid-menu-today .text-article {
+    margin-left: 5em;
+  }
+
+  .grid-menu-today p {
+    color: var(--colordarkmode);
+    margin: 0 auto;
+  }
+
+  .grid-menu-today h3 {
+    margin: 0 auto;
   }
 }
